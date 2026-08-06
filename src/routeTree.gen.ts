@@ -10,33 +10,259 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as MappingRouteImport } from './routes/mapping'
+import { Route as PlaygroundRouteImport } from './routes/playground'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as PatientsIndexRouteImport } from './routes/patients.index'
+import { Route as PatientsNewRouteImport } from './routes/patients.new'
+import { Route as ApiPublicAnalyticsRouteImport } from './routes/api/public/analytics'
+import { Route as ApiPublicDashboardRouteImport } from './routes/api/public/dashboard'
+import { Route as ApiPublicDiseasesRouteImport } from './routes/api/public/diseases'
+import { Route as ApiPublicHealthRouteImport } from './routes/api/public/health'
+import { Route as ApiPublicMapRouteImport } from './routes/api/public/map'
+import { Route as ApiPublicOpenapiRouteImport } from './routes/api/public/openapi'
+import { Route as ApiPublicPatientsRouteImport } from './routes/api/public/patients'
+import { Route as ApiPublicResetRouteImport } from './routes/api/public/reset'
+import { Route as ApiPublicSuggestRouteImport } from './routes/api/public/suggest'
+import { Route as ApiPublicFhirConceptmapDiseaseIdRouteImport } from './routes/api/public/fhir/conceptmap.$diseaseId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MappingRoute = MappingRouteImport.update({
+  id: '/mapping',
+  path: '/mapping',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlaygroundRoute = PlaygroundRouteImport.update({
+  id: '/playground',
+  path: '/playground',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientsIndexRoute = PatientsIndexRouteImport.update({
+  id: '/patients/',
+  path: '/patients/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientsNewRoute = PatientsNewRouteImport.update({
+  id: '/patients/new',
+  path: '/patients/new',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicAnalyticsRoute = ApiPublicAnalyticsRouteImport.update({
+  id: '/api/public/analytics',
+  path: '/api/public/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicDashboardRoute = ApiPublicDashboardRouteImport.update({
+  id: '/api/public/dashboard',
+  path: '/api/public/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicDiseasesRoute = ApiPublicDiseasesRouteImport.update({
+  id: '/api/public/diseases',
+  path: '/api/public/diseases',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicHealthRoute = ApiPublicHealthRouteImport.update({
+  id: '/api/public/health',
+  path: '/api/public/health',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicMapRoute = ApiPublicMapRouteImport.update({
+  id: '/api/public/map',
+  path: '/api/public/map',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicOpenapiRoute = ApiPublicOpenapiRouteImport.update({
+  id: '/api/public/openapi',
+  path: '/api/public/openapi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicPatientsRoute = ApiPublicPatientsRouteImport.update({
+  id: '/api/public/patients',
+  path: '/api/public/patients',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicResetRoute = ApiPublicResetRouteImport.update({
+  id: '/api/public/reset',
+  path: '/api/public/reset',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicSuggestRoute = ApiPublicSuggestRouteImport.update({
+  id: '/api/public/suggest',
+  path: '/api/public/suggest',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicFhirConceptmapDiseaseIdRoute =
+  ApiPublicFhirConceptmapDiseaseIdRouteImport.update({
+    id: '/api/public/fhir/conceptmap/$diseaseId',
+    path: '/api/public/fhir/conceptmap/$diseaseId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/dashboard': typeof DashboardRoute
+  '/mapping': typeof MappingRoute
+  '/playground': typeof PlaygroundRoute
+  '/settings': typeof SettingsRoute
+  '/patients/new': typeof PatientsNewRoute
+  '/patients/': typeof PatientsIndexRoute
+  '/api/public/analytics': typeof ApiPublicAnalyticsRoute
+  '/api/public/dashboard': typeof ApiPublicDashboardRoute
+  '/api/public/diseases': typeof ApiPublicDiseasesRoute
+  '/api/public/health': typeof ApiPublicHealthRoute
+  '/api/public/map': typeof ApiPublicMapRoute
+  '/api/public/openapi': typeof ApiPublicOpenapiRoute
+  '/api/public/patients': typeof ApiPublicPatientsRoute
+  '/api/public/reset': typeof ApiPublicResetRoute
+  '/api/public/suggest': typeof ApiPublicSuggestRoute
+  '/api/public/fhir/conceptmap/$diseaseId': typeof ApiPublicFhirConceptmapDiseaseIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/dashboard': typeof DashboardRoute
+  '/mapping': typeof MappingRoute
+  '/playground': typeof PlaygroundRoute
+  '/settings': typeof SettingsRoute
+  '/patients/new': typeof PatientsNewRoute
+  '/patients': typeof PatientsIndexRoute
+  '/api/public/analytics': typeof ApiPublicAnalyticsRoute
+  '/api/public/dashboard': typeof ApiPublicDashboardRoute
+  '/api/public/diseases': typeof ApiPublicDiseasesRoute
+  '/api/public/health': typeof ApiPublicHealthRoute
+  '/api/public/map': typeof ApiPublicMapRoute
+  '/api/public/openapi': typeof ApiPublicOpenapiRoute
+  '/api/public/patients': typeof ApiPublicPatientsRoute
+  '/api/public/reset': typeof ApiPublicResetRoute
+  '/api/public/suggest': typeof ApiPublicSuggestRoute
+  '/api/public/fhir/conceptmap/$diseaseId': typeof ApiPublicFhirConceptmapDiseaseIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/dashboard': typeof DashboardRoute
+  '/mapping': typeof MappingRoute
+  '/playground': typeof PlaygroundRoute
+  '/settings': typeof SettingsRoute
+  '/patients/new': typeof PatientsNewRoute
+  '/patients/': typeof PatientsIndexRoute
+  '/api/public/analytics': typeof ApiPublicAnalyticsRoute
+  '/api/public/dashboard': typeof ApiPublicDashboardRoute
+  '/api/public/diseases': typeof ApiPublicDiseasesRoute
+  '/api/public/health': typeof ApiPublicHealthRoute
+  '/api/public/map': typeof ApiPublicMapRoute
+  '/api/public/openapi': typeof ApiPublicOpenapiRoute
+  '/api/public/patients': typeof ApiPublicPatientsRoute
+  '/api/public/reset': typeof ApiPublicResetRoute
+  '/api/public/suggest': typeof ApiPublicSuggestRoute
+  '/api/public/fhir/conceptmap/$diseaseId': typeof ApiPublicFhirConceptmapDiseaseIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/analytics'
+    | '/dashboard'
+    | '/mapping'
+    | '/playground'
+    | '/settings'
+    | '/patients/new'
+    | '/patients/'
+    | '/api/public/analytics'
+    | '/api/public/dashboard'
+    | '/api/public/diseases'
+    | '/api/public/health'
+    | '/api/public/map'
+    | '/api/public/openapi'
+    | '/api/public/patients'
+    | '/api/public/reset'
+    | '/api/public/suggest'
+    | '/api/public/fhir/conceptmap/$diseaseId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/analytics'
+    | '/dashboard'
+    | '/mapping'
+    | '/playground'
+    | '/settings'
+    | '/patients/new'
+    | '/patients'
+    | '/api/public/analytics'
+    | '/api/public/dashboard'
+    | '/api/public/diseases'
+    | '/api/public/health'
+    | '/api/public/map'
+    | '/api/public/openapi'
+    | '/api/public/patients'
+    | '/api/public/reset'
+    | '/api/public/suggest'
+    | '/api/public/fhir/conceptmap/$diseaseId'
+  id:
+    | '__root__'
+    | '/'
+    | '/analytics'
+    | '/dashboard'
+    | '/mapping'
+    | '/playground'
+    | '/settings'
+    | '/patients/new'
+    | '/patients/'
+    | '/api/public/analytics'
+    | '/api/public/dashboard'
+    | '/api/public/diseases'
+    | '/api/public/health'
+    | '/api/public/map'
+    | '/api/public/openapi'
+    | '/api/public/patients'
+    | '/api/public/reset'
+    | '/api/public/suggest'
+    | '/api/public/fhir/conceptmap/$diseaseId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnalyticsRoute: typeof AnalyticsRoute
+  DashboardRoute: typeof DashboardRoute
+  MappingRoute: typeof MappingRoute
+  PlaygroundRoute: typeof PlaygroundRoute
+  SettingsRoute: typeof SettingsRoute
+  PatientsNewRoute: typeof PatientsNewRoute
+  PatientsIndexRoute: typeof PatientsIndexRoute
+  ApiPublicAnalyticsRoute: typeof ApiPublicAnalyticsRoute
+  ApiPublicDashboardRoute: typeof ApiPublicDashboardRoute
+  ApiPublicDiseasesRoute: typeof ApiPublicDiseasesRoute
+  ApiPublicHealthRoute: typeof ApiPublicHealthRoute
+  ApiPublicMapRoute: typeof ApiPublicMapRoute
+  ApiPublicOpenapiRoute: typeof ApiPublicOpenapiRoute
+  ApiPublicPatientsRoute: typeof ApiPublicPatientsRoute
+  ApiPublicResetRoute: typeof ApiPublicResetRoute
+  ApiPublicSuggestRoute: typeof ApiPublicSuggestRoute
+  ApiPublicFhirConceptmapDiseaseIdRoute: typeof ApiPublicFhirConceptmapDiseaseIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +274,148 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mapping': {
+      id: '/mapping'
+      path: '/mapping'
+      fullPath: '/mapping'
+      preLoaderRoute: typeof MappingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/playground': {
+      id: '/playground'
+      path: '/playground'
+      fullPath: '/playground'
+      preLoaderRoute: typeof PlaygroundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patients/': {
+      id: '/patients/'
+      path: '/patients'
+      fullPath: '/patients/'
+      preLoaderRoute: typeof PatientsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patients/new': {
+      id: '/patients/new'
+      path: '/patients/new'
+      fullPath: '/patients/new'
+      preLoaderRoute: typeof PatientsNewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/analytics': {
+      id: '/api/public/analytics'
+      path: '/api/public/analytics'
+      fullPath: '/api/public/analytics'
+      preLoaderRoute: typeof ApiPublicAnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/dashboard': {
+      id: '/api/public/dashboard'
+      path: '/api/public/dashboard'
+      fullPath: '/api/public/dashboard'
+      preLoaderRoute: typeof ApiPublicDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/diseases': {
+      id: '/api/public/diseases'
+      path: '/api/public/diseases'
+      fullPath: '/api/public/diseases'
+      preLoaderRoute: typeof ApiPublicDiseasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/health': {
+      id: '/api/public/health'
+      path: '/api/public/health'
+      fullPath: '/api/public/health'
+      preLoaderRoute: typeof ApiPublicHealthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/map': {
+      id: '/api/public/map'
+      path: '/api/public/map'
+      fullPath: '/api/public/map'
+      preLoaderRoute: typeof ApiPublicMapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/openapi': {
+      id: '/api/public/openapi'
+      path: '/api/public/openapi'
+      fullPath: '/api/public/openapi'
+      preLoaderRoute: typeof ApiPublicOpenapiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/patients': {
+      id: '/api/public/patients'
+      path: '/api/public/patients'
+      fullPath: '/api/public/patients'
+      preLoaderRoute: typeof ApiPublicPatientsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/reset': {
+      id: '/api/public/reset'
+      path: '/api/public/reset'
+      fullPath: '/api/public/reset'
+      preLoaderRoute: typeof ApiPublicResetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/suggest': {
+      id: '/api/public/suggest'
+      path: '/api/public/suggest'
+      fullPath: '/api/public/suggest'
+      preLoaderRoute: typeof ApiPublicSuggestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/fhir/conceptmap/$diseaseId': {
+      id: '/api/public/fhir/conceptmap/$diseaseId'
+      path: '/api/public/fhir/conceptmap/$diseaseId'
+      fullPath: '/api/public/fhir/conceptmap/$diseaseId'
+      preLoaderRoute: typeof ApiPublicFhirConceptmapDiseaseIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnalyticsRoute: AnalyticsRoute,
+  DashboardRoute: DashboardRoute,
+  MappingRoute: MappingRoute,
+  PlaygroundRoute: PlaygroundRoute,
+  SettingsRoute: SettingsRoute,
+  PatientsNewRoute: PatientsNewRoute,
+  PatientsIndexRoute: PatientsIndexRoute,
+  ApiPublicAnalyticsRoute: ApiPublicAnalyticsRoute,
+  ApiPublicDashboardRoute: ApiPublicDashboardRoute,
+  ApiPublicDiseasesRoute: ApiPublicDiseasesRoute,
+  ApiPublicHealthRoute: ApiPublicHealthRoute,
+  ApiPublicMapRoute: ApiPublicMapRoute,
+  ApiPublicOpenapiRoute: ApiPublicOpenapiRoute,
+  ApiPublicPatientsRoute: ApiPublicPatientsRoute,
+  ApiPublicResetRoute: ApiPublicResetRoute,
+  ApiPublicSuggestRoute: ApiPublicSuggestRoute,
+  ApiPublicFhirConceptmapDiseaseIdRoute: ApiPublicFhirConceptmapDiseaseIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
