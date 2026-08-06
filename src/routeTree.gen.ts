@@ -10,9 +10,13 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as MappingRouteImport } from './routes/mapping'
 import { Route as PlaygroundRouteImport } from './routes/playground'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as PatientsIndexRouteImport } from './routes/patients.index'
+import { Route as PatientsNewRouteImport } from './routes/patients.new'
 import { Route as ApiPublicAnalyticsRouteImport } from './routes/api/public/analytics'
 import { Route as ApiPublicDashboardRouteImport } from './routes/api/public/dashboard'
 import { Route as ApiPublicDiseasesRouteImport } from './routes/api/public/diseases'
@@ -29,6 +33,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
@@ -42,6 +51,21 @@ const MappingRoute = MappingRouteImport.update({
 const PlaygroundRoute = PlaygroundRouteImport.update({
   id: '/playground',
   path: '/playground',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientsIndexRoute = PatientsIndexRouteImport.update({
+  id: '/patients/',
+  path: '/patients/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientsNewRoute = PatientsNewRouteImport.update({
+  id: '/patients/new',
+  path: '/patients/new',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPublicAnalyticsRoute = ApiPublicAnalyticsRouteImport.update({
@@ -98,9 +122,13 @@ const ApiPublicFhirConceptmapDiseaseIdRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
   '/dashboard': typeof DashboardRoute
   '/mapping': typeof MappingRoute
   '/playground': typeof PlaygroundRoute
+  '/settings': typeof SettingsRoute
+  '/patients/new': typeof PatientsNewRoute
+  '/patients/': typeof PatientsIndexRoute
   '/api/public/analytics': typeof ApiPublicAnalyticsRoute
   '/api/public/dashboard': typeof ApiPublicDashboardRoute
   '/api/public/diseases': typeof ApiPublicDiseasesRoute
@@ -114,9 +142,13 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
   '/dashboard': typeof DashboardRoute
   '/mapping': typeof MappingRoute
   '/playground': typeof PlaygroundRoute
+  '/settings': typeof SettingsRoute
+  '/patients/new': typeof PatientsNewRoute
+  '/patients': typeof PatientsIndexRoute
   '/api/public/analytics': typeof ApiPublicAnalyticsRoute
   '/api/public/dashboard': typeof ApiPublicDashboardRoute
   '/api/public/diseases': typeof ApiPublicDiseasesRoute
@@ -131,9 +163,13 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
   '/dashboard': typeof DashboardRoute
   '/mapping': typeof MappingRoute
   '/playground': typeof PlaygroundRoute
+  '/settings': typeof SettingsRoute
+  '/patients/new': typeof PatientsNewRoute
+  '/patients/': typeof PatientsIndexRoute
   '/api/public/analytics': typeof ApiPublicAnalyticsRoute
   '/api/public/dashboard': typeof ApiPublicDashboardRoute
   '/api/public/diseases': typeof ApiPublicDiseasesRoute
@@ -149,9 +185,13 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/analytics'
     | '/dashboard'
     | '/mapping'
     | '/playground'
+    | '/settings'
+    | '/patients/new'
+    | '/patients/'
     | '/api/public/analytics'
     | '/api/public/dashboard'
     | '/api/public/diseases'
@@ -165,9 +205,13 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/analytics'
     | '/dashboard'
     | '/mapping'
     | '/playground'
+    | '/settings'
+    | '/patients/new'
+    | '/patients'
     | '/api/public/analytics'
     | '/api/public/dashboard'
     | '/api/public/diseases'
@@ -181,9 +225,13 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/analytics'
     | '/dashboard'
     | '/mapping'
     | '/playground'
+    | '/settings'
+    | '/patients/new'
+    | '/patients/'
     | '/api/public/analytics'
     | '/api/public/dashboard'
     | '/api/public/diseases'
@@ -198,9 +246,13 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnalyticsRoute: typeof AnalyticsRoute
   DashboardRoute: typeof DashboardRoute
   MappingRoute: typeof MappingRoute
   PlaygroundRoute: typeof PlaygroundRoute
+  SettingsRoute: typeof SettingsRoute
+  PatientsNewRoute: typeof PatientsNewRoute
+  PatientsIndexRoute: typeof PatientsIndexRoute
   ApiPublicAnalyticsRoute: typeof ApiPublicAnalyticsRoute
   ApiPublicDashboardRoute: typeof ApiPublicDashboardRoute
   ApiPublicDiseasesRoute: typeof ApiPublicDiseasesRoute
@@ -222,6 +274,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
@@ -241,6 +300,27 @@ declare module '@tanstack/react-router' {
       path: '/playground'
       fullPath: '/playground'
       preLoaderRoute: typeof PlaygroundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patients/': {
+      id: '/patients/'
+      path: '/patients'
+      fullPath: '/patients/'
+      preLoaderRoute: typeof PatientsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patients/new': {
+      id: '/patients/new'
+      path: '/patients/new'
+      fullPath: '/patients/new'
+      preLoaderRoute: typeof PatientsNewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/public/analytics': {
@@ -318,9 +398,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnalyticsRoute: AnalyticsRoute,
   DashboardRoute: DashboardRoute,
   MappingRoute: MappingRoute,
   PlaygroundRoute: PlaygroundRoute,
+  SettingsRoute: SettingsRoute,
+  PatientsNewRoute: PatientsNewRoute,
+  PatientsIndexRoute: PatientsIndexRoute,
   ApiPublicAnalyticsRoute: ApiPublicAnalyticsRoute,
   ApiPublicDashboardRoute: ApiPublicDashboardRoute,
   ApiPublicDiseasesRoute: ApiPublicDiseasesRoute,
