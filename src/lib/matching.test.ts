@@ -20,7 +20,13 @@ describe("InterMed /map fuzzy matching", () => {
     expect(r.diagnosis).toBe("Madhumeha");
     expect(r.confidence).toBeGreaterThanOrEqual(CONFIRM_THRESHOLD);
     expect(r.status).toBe("confirmed");
-    expect(r.reason.toLowerCase()).toContain("madhumeha");
+    expect(r.reason.toLowerCase()).toContain("madhumeeha");
+  });
+
+  it("resolves an unlisted spelling variant via transliteration collapsing", () => {
+    const r = mapQuery("Tamakaa Shwaasa", diseases);
+    expect(r.diagnosis).toBe("Tamaka Shwasa");
+    expect(r.confidence).toBeGreaterThanOrEqual(CONFIRM_THRESHOLD);
   });
 
   it("resolves the lay term 'Sugar Disease' via the synonym list", () => {
